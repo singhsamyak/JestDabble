@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Testing using Jest only renders correctly 1`] = `
+<div>
+  <p>
+    Clicked: 
+    <span>
+      0
+    </span>
+     times
+  </p>
+  <button
+    id="increment"
+    onClick={[Function]}
+  >
+    +
+  </button>
+  <button
+    id="decrement"
+    onClick={[Function]}
+  >
+    -
+  </button>
+  <button
+    id="reset"
+    onClick={[Function]}
+  >
+    Reset
+  </button>
+</div>
+`;
