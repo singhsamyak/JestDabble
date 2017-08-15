@@ -9,8 +9,8 @@ $ cd jestDabble
 $ npm install
 ```
 
-To run Jest tests
+To run webpack build
 
 ```sh
-$ npm test
+$ npm run build
 ```
