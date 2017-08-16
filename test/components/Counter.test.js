@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 
 /**
  * Mock Functions
- * ---------------
+ * --------------
  * - Erases the actual implementation of a function
  * - Captures calls to the function
  * - Captures instances of constructor functions when instantiated with `new`
@@ -17,7 +17,17 @@ import { shallow } from 'enzyme';
  * - The first time the test below runs, Jest creates a snapshot file (refer to file inside ./__snapshots__)
  * - The snapshot artifact should be committed and reviewed during code review
  * - On subsequent test runs, Jest will compare the rendered output with the previous snapshot
+ * - If the snapshot does not match the rendered UI, an error is thrown and the diff is logged:
+ *    - If the snapshot needs to be updated, simply run `jest -u`
  * - Refer to this article: https://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/
+ *
+ * Disadvantages of Snapshot Testing
+ * ---------------------------------
+ * - Updating snapshots is too easy
+ * - Running `jest -u` to update snapshot will update all snapshots
+ * - So if a single change causes many snapshots to break, it can be easy to accidentally update all of them
+ * - Possibly difficult to work through the whole diff to find changes
+ * - This is why it is highly recommended to review snapshot files during code review process
  */
 describe('Snapshot Testing using Jest only', () => {
   it ('renders correctly', () => {
