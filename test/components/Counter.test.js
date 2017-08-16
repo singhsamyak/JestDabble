@@ -10,6 +10,14 @@ import { shallow } from 'enzyme';
  * - Captures calls to the function
  * - Captures instances of constructor functions when instantiated with `new`
  * - Allows test-time configuration of return values
+ *
+ * Snapshot Testing
+ * ----------------
+ * - Uses a test renderer (render from 'react-test-render') to generate a serializable value of the React tree
+ * - The first time the test below runs, Jest creates a snapshot file (refer to file inside ./__snapshots__)
+ * - The snapshot artifact should be committed and reviewed during code review
+ * - On subsequent test runs, Jest will compare the rendered output with the previous snapshot
+ * - Refer to this article: https://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/
  */
 describe('Snapshot Testing using Jest only', () => {
   it ('renders correctly', () => {
@@ -26,6 +34,13 @@ describe('Snapshot Testing using Jest only', () => {
   });
 });
 
+/**
+ * Enzyme's Shallow Rendering
+ * --------------------------
+ * - Helpful to test a component as a unit.
+ * - Ensures test aren't asserting based on behavior of child components
+ * - http://airbnb.io/enzyme/docs/api/shallow.html
+ */
 function setup(value = 0) {
   const actions = {
     increment: jest.fn(), // jest.fn is a mock function
@@ -46,13 +61,6 @@ function setup(value = 0) {
   };
 }
 
-/**
- * Enzyme's Shallow Rendering
- * --------------------------
- * - Helpful to test a component as a unit.
- * - Ensures test aren't asserting based on behavior of child components
- * - http://airbnb.io/enzyme/docs/api/shallow.html
- */
 describe('DOM Testing using Enzyme', () => {
   it ('should initially have a count value of 0', () => {
     const { countVal } = setup();

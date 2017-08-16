@@ -3,7 +3,7 @@
 exports[`Snapshot Testing using Jest only renders correctly 1`] = `
 <div>
   <p>
-    Clicked: 
+    Count: 
     <span>
       0
     </span>
