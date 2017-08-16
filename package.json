@@ -21,8 +21,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "jest",
-    "build": "jest && webpack && react-scripts start",
+    "test": "jest --coverage",
+    "build": "jest --coverage && webpack && react-scripts start",
     "eject": "react-scripts eject"
   }
 }
